@@ -1,4 +1,5 @@
 # EMS-lab3 Maintainability
+[![SonarCloud](https://github.com/ETSISI-EMS/trabajo3_angel_sonarcloud_testing/actions/workflows/workflow.yml/badge.svg)](https://github.com/ETSISI-EMS/trabajo3_angel_sonarcloud_testing/actions/workflows/workflow.yml)
 
 Refactor the code to obtain a good compliance level according to the BetterCodeHub guidelines.
 
