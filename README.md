@@ -1,6 +1,3 @@
-:point_right: PUT YOUR CI BADGE HERE
-:point_right: PUT YOUR SCOREBOARD BADGE HERE
-
 # EMS-lab3 Maintainability
 
 Refactor the code to obtain a good compliance level according to the BetterCodeHub guidelines.
