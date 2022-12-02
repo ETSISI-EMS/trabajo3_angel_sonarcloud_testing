@@ -34,3 +34,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=ETSISI-EMS_trabajo3_angel_sonarcloud_testing
+      - name: Query status
+        id: qgStatus
+        uses: fjogeleit/http-request-action@v1
+        with:
+          url: 'https://sonarcloud.io/api/qualitygates/get_by_project'
+          method: 'GET'
+          organization: 'etsisi-ems'
+          project: 'ETSISI-EMS_trabajo3_angel_sonarcloud_testing'
+      - name: show status
+        run: echo ${{ fromJson(steps.qgStatus.outputs.response).qualityGate}}
