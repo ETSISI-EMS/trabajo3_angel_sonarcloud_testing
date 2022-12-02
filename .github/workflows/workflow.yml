@@ -38,9 +38,7 @@ jobs:
         id: qgStatus
         uses: fjogeleit/http-request-action@v1
         with:
-          url: 'https://sonarcloud.io/api/qualitygates/get_by_project'
+          url: 'https://sonarcloud.io/api/qualitygates/get_by_project?organization=etsisi-ems&project=ETSISI-EMS_trabajo3_angel_sonarcloud_testing'
           method: 'GET'
-          organization: 'etsisi-ems'
-          project: 'ETSISI-EMS_trabajo3_angel_sonarcloud_testing'
       - name: show status
         run: echo ${{ fromJson(steps.qgStatus.outputs.response).qualityGate}}
