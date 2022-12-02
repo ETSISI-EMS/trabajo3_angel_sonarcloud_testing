@@ -5,16 +5,12 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.TreeMap;
-import java.util.NavigableMap;
 import com.practica.excecption.EmsDuplicatePersonException;
 import com.practica.excecption.EmsPersonNotFoundException;
 import com.practica.genericas.Persona;
 
 public class Poblacion {
-	LinkedList<Persona> lista ;
+	private LinkedList<Persona> lista;
 
 	public Poblacion() {
 		super();
