@@ -43,7 +43,7 @@ jobs:
       - name: show status
         run: echo ${{ fromJson(steps.qgStatus.outputs.response).projectStatus.status}}
       - name: fail_if_error
-        if: ${{ fromJson(steps.qgStatus.outputs.response).projectStatus.status}} == 'ERROR'
+        if: ${{ fromJson(steps.qgStatus.outputs.response).projectStatus.status == 'ERROR'}}
         uses: actions/github-script@v3
         with:
           script: |
