@@ -15,6 +15,27 @@ public class PosicionPersona {
 	private Coordenada coordenada;
 	private String documento;
 	private LocalDateTime fechaPosicion;
+
+	public static void printPrimeNumbers(int size) {
+		int[] numbers = new int[size];
+		for (int i = 0; i < size; i++) {
+			numbers[i] = i + 1;
+		}
+		for (int i = 0; i < size; i++) {
+			if (numbers[i] != 0) {
+				for (int j = i + 1; j < size; j++) {
+					if (numbers[j] % numbers[i] == 0) {
+						numbers[j] = 0;
+					}
+				}
+			}
+		}
+		for (int i = 0; i < size; i++) {
+			if (numbers[i] != 0) {
+				System.out.println(numbers[i]);
+			}
+		}
+	}
 	
 	public PosicionPersona(String[] datos) throws EmsInvalidNumberOfDataException {
 		if (datos.length != Constantes.MAX_DATOS_LOCALIZACION) {
