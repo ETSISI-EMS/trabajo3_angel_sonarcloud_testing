@@ -6,6 +6,14 @@ import com.practica.excecption.EmsInvalidNumberOfDataException;
 
 
 public class Persona {
+
+	private static final int NOMBRE_POSICION = 2;
+	private static final int APELLIDO_POSICION = 3;
+	private static final int FECHA_NACIMIENTO_POSICION = 7;
+	private static final int DOCUMENTO_POSICION = 1;
+	private static final int EMAIL_POSICION = 4;
+	private static final int DIRECCION_POSICION = 5;
+	private static final int CP_POSICION = 6;
 	
 	private String nombre, apellidos, documento, email, direccion, cp;
 	private LocalDate fechaNacimiento;
@@ -15,13 +23,13 @@ public class Persona {
 			throw new EmsInvalidNumberOfDataException("El número de datos para PERSONA es menor de 8");
 		}
 		
-		this.nombre = datos[2];
-		this.apellidos = datos[3];
-		this.documento = datos[1];
-		this.email = datos[4];
-		this.direccion = datos[5];
-		this.cp = datos[6];
-		this.fechaNacimiento = FechaHora.parsearFecha(datos[7]);
+		this.nombre = datos[NOMBRE_POSICION];
+		this.apellidos = datos[APELLIDO_POSICION];
+		this.documento = datos[DOCUMENTO_POSICION];
+		this.email = datos[EMAIL_POSICION];
+		this.direccion = datos[DIRECCION_POSICION];
+		this.cp = datos[CP_POSICION];
+		this.fechaNacimiento = FechaHora.parsearFecha(datos[FECHA_NACIMIENTO_POSICION]);
 	}
 
 	public Persona(String nombre, String apellidos, String documento, String email, String direccion, String cp, LocalDate fechaNacimiento) {

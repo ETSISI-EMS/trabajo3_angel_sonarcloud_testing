@@ -6,6 +6,12 @@ import com.practica.excecption.EmsInvalidNumberOfDataException;
 
 
 public class PosicionPersona {
+	private static final int POS_DOCUMENTO = 1;
+	private static final int POS_FECHA = 2;
+	private static final int POS_HORA = 3;
+	private static final int POS_LATITUD = 4;
+	private static final int POS_LONGITUD = 5;
+
 	private Coordenada coordenada;
 	private String documento;
 	private LocalDateTime fechaPosicion;
@@ -15,9 +21,9 @@ public class PosicionPersona {
 			throw new EmsInvalidNumberOfDataException("El número de datos para LOCALIZACION es menor de 6");
 		}
 		
-		this.documento = datos[1];
-		this.fechaPosicion = FechaHora.parsearFechaHora(datos[2], datos[3]);
-		this.coordenada = new Coordenada(Float.parseFloat(datos[4]), Float.parseFloat(datos[5]));
+		this.documento = datos[POS_DOCUMENTO];
+		this.fechaPosicion = FechaHora.parsearFechaHora(datos[POS_FECHA], datos[POS_HORA]);
+		this.coordenada = new Coordenada(Float.parseFloat(datos[POS_LATITUD]), Float.parseFloat(datos[POS_LONGITUD]));
 	}
 	
 	public PosicionPersona(Coordenada coordenada, String documento, LocalDateTime fechaPosicion) {
